@@ -1,0 +1,100 @@
+<resources>
+    <string name="app_name">Fuel UA</string>
+
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+
+    <string name="lorem">"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt
+        ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi
+        ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore
+        eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qu"</string>
+
+    <string name="uah">₴</string>
+    <string name="usd">$</string>
+    <string name="eur">€</string>
+
+    <string name="settings">Налаштування</string>
+    <string name="manage_company">Управління компанією</string>
+    <string name="about_us">Про нас</string>
+
+    <string name="no_favorites">Вибраних не знайдено. Додайте хоча б одне</string>
+    <string name="no_station">АЗС не знайдено</string>
+    <string name="additional_info">Додаткова інформація:</string>
+    <string name="work_schedule">Графік роботи:</string>
+    <string name="demo_info">Demo info</string>
+    <string name="petrol_a95">A-95:</string>
+    <string name="diesel">ДП:</string>
+    <string name="gas">Газ:</string>
+    <string name="phone_number_hint">+38 (095) 415-0177</string>
+    <string name="verification_number_phone">Верифікувати</string>
+    <string name="continue_text">Продовжити</string>
+    <string name="plus">+</string>
+    <string name="not_available">Немає в наявності</string>
+
+    <!-- exception messages !-->
+    <string name="socket_timeout_exception_message">Час запиту минув. Перевірте ваше підключення до інтернету.</string>
+    <string name="unknown_host_exception_message">Не вдається встановити з’єднання. Перевірте ваше підключення до інтернету.</string>
+    <string name="connection_shutdown_exception_message">З\'єднання перервано. Перевірте ваше підключення до інтернету.</string>
+    <string name="connect_exception_message">Перевірте ваше підключення до інтернету</string>
+    <string name="unauthorized_exception_message">Помилка авторизації.</string>
+    <string name="too_many_requests_exception_message">Відправлено багато запитів. Спробуйте будь ласка пізніше.</string>
+    <string name="internal_server_error_exception_message">Помилка сервера. Спробуйте будь ласка пізніше.</string>
+    <string name="not_found_exception_message">Ресурс не знайдено. Спробуйте буль ласка пізніше</string>
+    <string name="server_not_available_exception_message">Сервер недоступний. Спробуйте пізніше.</string>
+    <string name="forbidden_exception_message">Сервер не відповідає на запит</string>
+    <string name="the_field_must_not_be_empty">Поле не повинно бути порожнім</string>
+    <string name="add_a_logo">Додайте логотип комппанії</string>
+    <string name="gas_station_company">Заправні станції компанії</string>
+    <string name="monday">Понеділок:</string>
+    <string name="tuesday">Вівторок:</string>
+    <string name="wednesday">Середа:</string>
+    <string name="thursday">Четвер:</string>
+    <string name="friday">П`ятниця:</string>
+    <string name="saturday">Субота:</string>
+    <string name="sunday">Неділя:</string>
+
+    <string name="unknown">Невідомо</string>
+    <string name="weekends">Вихідні дні</string>
+    <string name="weekdays">Будні дні</string>
+    <string name="schedule_today">Графік роботи сьогодні:</string>
+    <string name="region">Регіон</string>
+    <string name="fuel_type">Тип палива</string>
+    <string name="check_box_text">Сортувати за наявністю</string>
+    <string name="filter">Відфільтрувати</string>
+    <string name="all_fields_must_be_filled">Усі поля повинні бути заповнені</string>
+    <string name="type">Тип</string>
+    <string name="limit">Ліміт</string>
+    <string name="price">Ціна</string>
+    <string name="gas_station_created">АЗС створена успішно</string>
+
+    <string-array name="sorting">
+        <item>Сортування за регіоном</item>
+        <item>Сортування за наявністю</item>
+        <item>Сортування за типом палива</item>
+    </string-array>
+
+    <string name="company_update">"Оновлення компанії"</string>
+    <string name="station_update">"Оновлення заправної станції"</string>
+    <string name="station_update_by_address">Оновлення станції за адресою:</string>
+    <string name="channel_description">This is default channel for ${app_name} app"</string>
+    <string name="company_profile">Профіль компанії</string>
+    <string name="company_name">Назва компанії</string>
+    <string name="company_phone_number">Контактний номер телефону</string>
+    <string name="company_description">Опис компанії</string>
+    <string name="update_data">Оновити дані</string>
+    <string name="list_of_station">Список азс</string>
+    <string name="sign_out">Sign out ✖</string>
+    <string name="schedule_may_change">Графік може змінюватись</string>
+    <string name="fuel_available">Паливо у наявності</string>
+    <string name="unlimited_fuel">Паливо без обмежень</string>
+    <string name="add">Додати</string>
+    <string name="fuel">Паливо</string>
+    <string name="currency">Валюта</string>
+    <string name="save">ЗБЕРЕГТИ</string>
+    <string name="edit_azs">Редагування АЗС</string>
+    <string name="create_azs">Створення АЗС</string>
+    <string name="enter_the_code_to_verify">Введіть код для перевірки</string>
+    <string name="we_sent_a_verification_code">Ми надіслали код підтвердження на ваш телефон за допомогою текстового повідомлення.</string>
+    <string name="the_code_was_entered_incorrectly">Код введено невірно</string>
+
+
+</resources>

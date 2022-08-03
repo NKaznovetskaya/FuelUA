@@ -1,0 +1,656 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<androidx.core.widget.NestedScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/round_outline"
+        tools:context=".presentation.menu.company.createStation.CreateStationFragment">
+
+
+        <com.google.android.material.appbar.AppBarLayout
+            android:id="@+id/appBarLayout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/background_color"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <androidx.appcompat.widget.Toolbar
+                android:id="@+id/toolbar"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+
+                    <ImageButton
+                        android:id="@+id/back_button"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/back_button_margin"
+                        android:layout_marginBottom="@dimen/back_button_margin"
+                        android:background="@android:color/transparent"
+                        android:contentDescription="@null"
+                        android:src="@drawable/ic_baseline_arrow_back"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+                    <TextView
+                        android:id="@+id/gas_station_for_company_tv"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="@dimen/about_us_margin_start"
+                        android:layout_marginTop="@dimen/about_us_margin_top"
+                        android:text="@string/create_azs"
+                        android:textColor="@color/black"
+                        android:textSize="@dimen/text_size_large"
+                        android:textStyle="normal"
+                        app:layout_constraintStart_toEndOf="@+id/back_button"
+                        app:layout_constraintTop_toTopOf="parent" />
+                </androidx.constraintlayout.widget.ConstraintLayout>
+            </androidx.appcompat.widget.Toolbar>
+        </com.google.android.material.appbar.AppBarLayout>
+
+
+        <de.hdodenhof.circleimageview.CircleImageView
+            android:id="@+id/station_logo_iv"
+            android:layout_width="@dimen/image_view_width"
+            android:layout_height="@dimen/image_view_height"
+            android:layout_marginTop="23dp"
+            android:src="@drawable/place_holder"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/appBarLayout" />
+
+
+        <androidx.appcompat.widget.AppCompatSpinner
+            android:id="@+id/city_sp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/spinner_margin_start"
+            android:layout_marginEnd="@dimen/spinner_margin_end"
+            android:layout_marginTop="@dimen/spinner_margin_top"
+            android:backgroundTint="@color/green"
+            android:backgroundTintMode="add"
+            android:nestedScrollingEnabled="true"
+            android:popupBackground="@color/green"
+            android:spinnerMode="dropdown"
+            android:textAlignment="textStart"
+            android:theme="@style/ThemeOverlay.Material3.TextInputEditText"
+            app:layout_constraintStart_toEndOf="@id/type_tv"
+            app:layout_constraintTop_toBottomOf="@id/station_logo_iv"
+            tools:listitem="@android:layout/simple_spinner_item" />
+
+        <TextView
+            android:id="@+id/address_tv"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/address_tv_margin_start"
+            android:layout_marginTop="@dimen/address_tv_margin_top"
+            android:layout_marginEnd="@dimen/address_tv_margin_end"
+            android:text="Адреса"
+            android:textColor="@color/black"
+            android:textSize="@dimen/text_size_small"
+            android:textStyle="normal"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/city_sp" />
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/address_container"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/address_til_margin_start"
+            android:layout_marginEnd="@dimen/address_til_margin_end"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/address_tv">
+
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/address_et"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/custom_edit_text_unselected"
+                android:imeOptions="actionNext"
+                android:inputType="textCapWords"
+                android:maxLength="25"
+                android:paddingLeft="@dimen/address_et_padding_left"
+                android:paddingEnd="@dimen/address_et_padding_end"
+                android:textColor="@color/black"
+                android:textSize="@dimen/text_size_large"
+                android:textStyle="normal"
+                tools:text="600-річчя 12" />
+
+        </com.google.android.material.textfield.TextInputLayout>
+
+
+        <TextView
+            android:id="@+id/type_tv"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/tv_type_margin_start"
+            android:layout_marginTop="@dimen/tv_type_margin_top"
+            android:text="Tип палива"
+            android:textColor="@color/green"
+            android:textSize="@dimen/tv_type_text_size"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/address_container" />
+
+        <androidx.appcompat.widget.AppCompatSpinner
+            android:id="@+id/fuel_type_sp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/fuel_type_sp_margin_start"
+            android:layout_marginTop="@dimen/fuel_type_sp_margin_top"
+            android:backgroundTint="@color/green"
+            android:backgroundTintMode="add"
+            android:nestedScrollingEnabled="true"
+            android:popupBackground="@color/green"
+            android:spinnerMode="dropdown"
+            android:textAlignment="textStart"
+            android:theme="@style/ThemeOverlay.Material3.TextInputEditText"
+            app:layout_constraintStart_toEndOf="@id/type_tv"
+            app:layout_constraintTop_toBottomOf="@id/address_container"
+            tools:listitem="@android:layout/simple_spinner_item" />
+
+        <TextView
+            android:id="@+id/limit_tv"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/limit_tv_margin_start"
+            android:layout_marginTop="@dimen/limit_tv_margin_top"
+            android:text="Ліміт"
+            android:textColor="@color/green"
+            android:textSize="@dimen/limit_tv_text_size"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/type_tv" />
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/limit_til"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/limit_til_margin_start"
+            android:layout_marginTop="@dimen/limit_til_margin_top"
+            android:layout_marginEnd="@dimen/limit_til_margin_end"
+            android:textColorHint="@color/black"
+            app:layout_constraintStart_toEndOf="@id/limit_tv"
+            app:layout_constraintTop_toBottomOf="@id/fuel_type_sp">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/limit_et"
+                android:layout_width="@dimen/limit_et_width"
+                android:layout_height="@dimen/limit_et_height"
+                android:background="@drawable/custom_edit_text_unselected"
+                android:clickable="true"
+                android:focusable="true"
+                android:imeOptions="actionNext"
+                android:textColor="@color/black" />
+
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <CheckBox
+            android:id="@+id/cbAvailability"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/check_box_margin_start"
+            android:layout_marginTop="@dimen/check_box_margin_top"
+            android:buttonTint="@color/black"
+            android:text="@string/fuel_available"
+            android:textColor="@color/green"
+            android:textSize="@dimen/text_size"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/price_tv" />
+
+        <CheckBox
+            android:id="@+id/cbWithoutRestrictions"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/check_box_margin_start"
+            android:layout_marginTop="@dimen/check_box_margin_top"
+            android:buttonTint="@color/black"
+            android:text="@string/unlimited_fuel"
+            android:textColor="@color/green"
+            android:textSize="@dimen/text_size"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/cbAvailability" />
+
+        <Button
+            android:id="@+id/add_fuel_btn"
+            android:layout_width="@dimen/add_btn_width"
+            android:layout_height="@dimen/add_btn_height"
+            android:layout_marginStart="@dimen/add_btn_margin_start"
+            android:layout_marginTop="@dimen/add_btn_margin_top"
+            android:background="@drawable/custom_button"
+            android:gravity="center"
+            android:text="@string/add"
+            android:textAllCaps="false"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/cbWithoutRestrictions" />
+
+        <TextView
+            android:id="@+id/fuel_tv"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/fuel_tv_margin_start"
+            android:layout_marginTop="@dimen/fuel_tv_margin_top"
+            android:text="@string/fuel"
+            android:textColor="@color/green"
+            android:textSize="@dimen/fuel_tv_text_size"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/add_fuel_btn" />
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/created_fuels_rv"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_marginStart="@dimen/fuel_type_gv_margin_start"
+            android:layout_marginTop="@dimen/fuel_type_gv_margin_top"
+            android:layout_marginEnd="@dimen/fuel_type_gv_margin_end"
+            android:background="@color/grey"
+            android:nestedScrollingEnabled="false"
+            app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/fuel_tv"
+            tools:itemCount="3"
+            tools:listitem="@layout/item_create_fuel" />
+
+        <TextView
+            android:id="@+id/price_tv"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/price_tv_margin_start"
+            android:layout_marginTop="@dimen/price_tv_margin_top"
+            android:text="@string/price"
+            android:textColor="@color/green"
+            android:textSize="@dimen/price_tv_text_size"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/limit_tv" />
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/price_til"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/price_til_margin_start"
+            android:layout_marginTop="@dimen/price_til_margin_top"
+            android:textColorHint="@color/black"
+            app:layout_constraintStart_toEndOf="@id/price_tv"
+            app:layout_constraintTop_toBottomOf="@id/limit_til">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/price_et"
+                android:layout_width="@dimen/price_et_width"
+                android:layout_height="@dimen/price_et_height"
+                android:background="@drawable/custom_edit_text_unselected"
+                android:textColor="@color/black" />
+
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <TextView
+            android:id="@+id/currency_tv"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/currency_tv_margin_top"
+            android:layout_marginEnd="@dimen/currency_tv_margin_end"
+            android:text="@string/currency"
+            android:textColor="@color/green"
+            android:textSize="@dimen/currency_tv_text_size"
+            app:layout_constraintEnd_toStartOf="@id/currency_type_sp"
+            app:layout_constraintTop_toTopOf="@id/price_til" />
+
+        <Spinner
+            android:id="@+id/currency_type_sp"
+            style="@style/Widget.AppCompat.DropDownItem.Spinner"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="@dimen/currency_type_sp_margin_end"
+            android:layout_marginBottom="@dimen/currency_type_sp_margin_bottom"
+            android:backgroundTint="@color/green"
+            android:backgroundTintMode="add"
+            android:popupBackground="@color/green"
+            android:spinnerMode="dropdown"
+            android:textAlignment="center"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="@id/currency_tv"
+            tools:listitem="@android:layout/simple_spinner_item" />
+
+        <TextView
+            android:id="@+id/work_time_tv"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/work_time_tv_margin_start"
+            android:layout_marginTop="@dimen/work_time_tv_margin_top"
+            android:text="@string/work_schedule"
+            android:textAllCaps="true"
+            android:textColor="@color/green"
+            android:textSize="@dimen/text_size"
+            android:textStyle="bold"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/created_fuels_rv" />
+
+        <TextView
+            android:id="@+id/monday_tv"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/monday_tv_margin_start"
+            android:layout_marginTop="@dimen/monday_tv_margin_top"
+            android:text="@string/monday"
+            android:textColor="@color/black"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/work_time_tv" />
+
+        <EditText
+            android:id="@+id/start_work_monday"
+            style="@style/Widget.AppCompat.EditText"
+            android:layout_width="@dimen/start_work_monday_width"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/start_work_monday_margin_start"
+            android:layout_marginTop="@dimen/start_work_monday_margin_top"
+            android:clickable="true"
+            android:maxLength="5"
+            android:background="@drawable/custom_edit_text_selected"
+            android:textColor="@color/black"
+            android:textSize="@dimen/text_size_small"
+            tools:text="22:00"
+            app:layout_constraintStart_toEndOf="@id/monday_tv"
+            app:layout_constraintTop_toBottomOf="@id/work_time_tv"
+
+            />
+
+        <EditText
+            android:id="@+id/end_work_monday"
+            style="@style/Widget.AppCompat.EditText"
+            android:layout_width="@dimen/end_work_monday_width"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/end_work_monday_margin_start"
+            android:layout_marginTop="@dimen/end_work_monday_margin_top"
+            android:background="@drawable/custom_edit_text_selected"
+            tools:text="06:00"
+            android:maxLength="5"
+            android:clickable="true"
+            android:textColor="@color/black"
+            android:textSize="@dimen/text_size_small"
+            app:layout_constraintStart_toEndOf="@id/start_work_monday"
+            app:layout_constraintTop_toBottomOf="@id/work_time_tv" />
+
+
+        <TextView
+            android:id="@+id/tuesday_tv"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/tuesday_tv_margin_start"
+            android:layout_marginTop="@dimen/tuesday_tv_margin_top"
+            android:text="@string/tuesday"
+            android:textColor="@color/black"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/monday_tv" />
+
+        <EditText
+            android:id="@+id/start_work_tuesday"
+            style="@style/Widget.AppCompat.EditText"
+            android:layout_width="@dimen/start_work_monday_width"
+            android:layout_height="wrap_content"
+            android:clickable="true"
+            android:background="@drawable/custom_edit_text_selected"
+            android:layout_marginTop="@dimen/start_work_tuesday_margin_top"
+            android:maxLength="5"
+            android:textColor="@color/black"
+            android:textSize="@dimen/text_size_small"
+            app:layout_constraintStart_toStartOf="@id/start_work_monday"
+            app:layout_constraintTop_toBottomOf="@id/start_work_monday" />
+
+        <EditText
+            android:id="@+id/end_work_tuesday"
+            style="@style/Widget.AppCompat.EditText"
+            android:layout_width="@dimen/start_work_monday_width"
+            android:layout_marginTop="@dimen/start_work_tuesday_margin_top"
+            android:layout_height="wrap_content"
+            android:clickable="true"
+            android:maxLength="5"
+            android:background="@drawable/custom_edit_text_selected"
+            android:textColor="@color/black"
+            android:textSize="@dimen/text_size_small"
+            app:layout_constraintStart_toStartOf="@id/end_work_monday"
+            app:layout_constraintTop_toBottomOf="@id/end_work_monday" />
+
+        <TextView
+            android:id="@+id/wednesday_tv"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/wednesday_tv_margin_start"
+            android:layout_marginTop="@dimen/wednesday_tv_margin_top"
+            android:text="@string/wednesday"
+            android:textColor="@color/black"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/tuesday_tv" />
+
+        <EditText
+            android:id="@+id/start_work_wednesday"
+            style="@style/Widget.AppCompat.EditText"
+            android:layout_width="@dimen/start_work_monday_width"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/start_work_tuesday_margin_top"
+            android:clickable="true"
+            android:maxLength="5"
+            android:background="@drawable/custom_edit_text_selected"
+            android:textColor="@color/black"
+            android:textSize="@dimen/text_size_small"
+            app:layout_constraintStart_toStartOf="@id/start_work_tuesday"
+            app:layout_constraintTop_toBottomOf="@id/start_work_tuesday" />
+
+        <EditText
+            android:id="@+id/end_work_wednesday"
+            style="@style/Widget.AppCompat.EditText"
+            android:layout_width="@dimen/start_work_monday_width"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/start_work_tuesday_margin_top"
+            android:layout_marginEnd="@dimen/end_work_wednesday_margin_end"
+            android:clickable="true"
+            android:maxLength="5"
+            android:background="@drawable/custom_edit_text_selected"
+            android:textColor="@color/black"
+            android:textSize="@dimen/text_size_small"
+            app:layout_constraintStart_toStartOf="@id/end_work_tuesday"
+            app:layout_constraintTop_toBottomOf="@id/start_work_tuesday" />
+
+        <TextView
+            android:id="@+id/thursday_tv"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/thursday_tv_margin_start"
+            android:layout_marginTop="@dimen/thursday_tv_margin_top"
+            android:text="@string/thursday"
+            android:textColor="@color/black"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/wednesday_tv" />
+
+        <EditText
+            android:id="@+id/start_work_thursday"
+            style="@style/Widget.AppCompat.EditText"
+            android:layout_width="@dimen/start_work_monday_width"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/start_work_tuesday_margin_top"
+            android:clickable="true"
+            android:background="@drawable/custom_edit_text_selected"
+            android:textColor="@color/black"
+            android:textSize="@dimen/text_size_small"
+            app:layout_constraintStart_toStartOf="@id/start_work_wednesday"
+            app:layout_constraintTop_toBottomOf="@id/start_work_wednesday" />
+
+        <EditText
+            android:id="@+id/end_work_thursday"
+            style="@style/Widget.AppCompat.EditText"
+            android:layout_width="@dimen/start_work_monday_width"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/start_work_tuesday_margin_top"
+            android:clickable="true"
+            android:maxLength="5"
+            android:background="@drawable/custom_edit_text_selected"
+            android:textColor="@color/black"
+            android:textSize="@dimen/text_size_small"
+            app:layout_constraintStart_toStartOf="@id/end_work_wednesday"
+            app:layout_constraintTop_toBottomOf="@id/end_work_wednesday" />
+
+        <TextView
+            android:id="@+id/friday_tv"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/friday_tv_margin_start"
+            android:layout_marginTop="@dimen/friday_tv_margin_top"
+            android:text="@string/friday"
+            android:textColor="@color/black"
+            app:layout_constraintStart_toEndOf="@id/end_work_monday"
+            app:layout_constraintTop_toBottomOf="@id/work_time_tv" />
+
+        <EditText
+            android:id="@+id/start_work_friday"
+            style="@style/Widget.AppCompat.EditText"
+            android:layout_width="@dimen/start_work_monday_width"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/start_work_friday_margin_start"
+            android:layout_marginTop="@dimen/start_work_friday_margin_top"
+            android:clickable="true"
+            android:maxLength="5"
+            android:background="@drawable/custom_edit_text_selected"
+            android:textColor="@color/black"
+            android:textSize="@dimen/text_size_small"
+            app:layout_constraintStart_toEndOf="@id/friday_tv"
+            app:layout_constraintTop_toBottomOf="@id/work_time_tv" />
+
+        <EditText
+            android:id="@+id/end_work_friday"
+            style="@style/Widget.AppCompat.EditText"
+            android:layout_width="@dimen/start_work_monday_width"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/end_work_friday_margin_start"
+            android:layout_marginTop="@dimen/end_work_friday_margin_top"
+            android:clickable="true"
+            android:maxLength="5"
+            android:background="@drawable/custom_edit_text_selected"
+            android:textColor="@color/black"
+            android:textSize="@dimen/text_size_small"
+            app:layout_constraintStart_toEndOf="@id/start_work_friday"
+            app:layout_constraintTop_toBottomOf="@id/work_time_tv" />
+
+        <TextView
+            android:id="@+id/saturday_tv"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/saturday_tv_margin_top"
+            android:text="@string/saturday"
+            android:textColor="@color/black"
+            app:layout_constraintStart_toStartOf="@id/friday_tv"
+            app:layout_constraintTop_toBottomOf="@id/friday_tv" />
+
+        <EditText
+            android:id="@+id/start_work_saturday"
+            style="@style/Widget.AppCompat.EditText"
+            android:layout_width="@dimen/start_work_monday_width"
+            android:layout_height="wrap_content"
+            android:clickable="true"
+            android:maxLength="5"
+            android:background="@drawable/custom_edit_text_selected"
+            android:layout_marginTop="@dimen/start_work_tuesday_margin_top"
+            android:textColor="@color/black"
+            android:textSize="@dimen/text_size_small"
+            app:layout_constraintStart_toStartOf="@id/start_work_friday"
+            app:layout_constraintTop_toBottomOf="@id/start_work_friday" />
+
+        <EditText
+            android:id="@+id/end_work_saturday"
+            style="@style/Widget.AppCompat.EditText"
+            android:layout_width="@dimen/start_work_monday_width"
+            android:layout_height="wrap_content"
+            android:clickable="true"
+            android:maxLength="5"
+            android:background="@drawable/custom_edit_text_selected"
+            android:layout_marginTop="@dimen/start_work_tuesday_margin_top"
+            android:textColor="@color/black"
+            android:textSize="@dimen/text_size_small"
+            app:layout_constraintStart_toStartOf="@id/end_work_friday"
+            app:layout_constraintTop_toBottomOf="@id/end_work_friday" />
+
+        <TextView
+            android:id="@+id/sunday_tv"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/sunday_tv_margin_top"
+            android:layout_marginEnd="@dimen/sunday_tv_margin_end"
+            android:text="@string/sunday"
+            android:textColor="@color/black"
+            app:layout_constraintStart_toStartOf="@id/saturday_tv"
+            app:layout_constraintTop_toBottomOf="@id/saturday_tv" />
+
+        <EditText
+            android:id="@+id/start_work_sunday"
+            style="@style/Widget.AppCompat.EditText"
+            android:layout_width="@dimen/start_work_monday_width"
+            android:layout_height="wrap_content"
+            android:clickable="true"
+            android:maxLength="5"
+            android:background="@drawable/custom_edit_text_selected"
+            android:layout_marginTop="@dimen/start_work_tuesday_margin_top"
+            android:textColor="@color/black"
+            android:textSize="@dimen/text_size_small"
+            app:layout_constraintStart_toStartOf="@id/start_work_saturday"
+            app:layout_constraintTop_toBottomOf="@id/start_work_saturday" />
+
+        <EditText
+            android:id="@+id/end_work_sunday"
+            style="@style/Widget.AppCompat.EditText"
+            android:layout_width="@dimen/start_work_monday_width"
+            android:layout_height="wrap_content"
+            android:clickable="true"
+            android:maxLength="5"
+            android:background="@drawable/custom_edit_text_selected"
+            android:layout_marginTop="@dimen/start_work_tuesday_margin_top"
+            android:textColor="@color/black"
+            android:textSize="@dimen/text_size_small"
+            app:layout_constraintStart_toStartOf="@id/end_work_saturday"
+            app:layout_constraintTop_toBottomOf="@id/end_work_saturday" />
+
+        <TextView
+            android:id="@+id/helper_text"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/helper_text_margin_top"
+            android:layout_marginBottom="@dimen/helper_text_margin_bottom"
+            android:visibility="gone"
+            android:text="@string/all_fields_must_be_filled"
+            android:textColor="@color/red"
+            android:textSize="@dimen/text_size_small"
+            android:textStyle="bold"
+            app:layout_constraintBottom_toTopOf="@id/save_btn"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent" />
+
+        <Button
+            android:id="@+id/save_btn"
+            android:layout_width="wrap_content"
+            android:layout_height="@dimen/save_btn_height"
+            android:layout_marginTop="@dimen/save_btn_margin_top"
+            android:layout_marginBottom="@dimen/save_btn_margin_bottom"
+            android:background="@drawable/custom_button"
+            android:text="@string/save"
+            android:textStyle="bold"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/thursday_tv" />
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</androidx.core.widget.NestedScrollView>
+

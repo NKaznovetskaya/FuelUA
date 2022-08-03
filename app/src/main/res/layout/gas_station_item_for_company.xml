@@ -1,0 +1,202 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+            name="item"
+            type="com.zeira.fuelua.domain.models.GasStationModelX" />
+    </data>
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/cardView"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/card_view_height"
+        android:layout_marginStart="@dimen/card_view_margin_start"
+        android:layout_marginTop="@dimen/card_view_margin_top"
+        android:layout_marginEnd="@dimen/card_view_margin_end"
+        app:cardBackgroundColor="@color/white"
+        app:cardCornerRadius="@dimen/card_view_cornerRadius"
+        app:cardElevation="@dimen/card_view_elevation">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/main_constraint"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <ImageView
+                android:id="@+id/station_logo_iv"
+                android:layout_width="@dimen/station_logo_size"
+                android:layout_height="@dimen/station_logo_size"
+                android:layout_marginStart="@dimen/station_logo_margin"
+                android:layout_marginTop="@dimen/station_logo_margin"
+                android:contentDescription="@null"
+                app:imageUrl="@{item.logo}"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                tools:src="@mipmap/ic_launcher" />
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/fuel_constraint"
+                android:layout_width="0dp"
+                android:layout_height="@dimen/fuel_constraint_height"
+                android:layout_marginStart="@dimen/fuel_constraint_margin_start"
+                android:layout_marginTop="@dimen/fuel_constraint_margin_top"
+                android:layout_marginEnd="@dimen/fuel_constraint_margin_end"
+                android:background="@drawable/round_outline"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toEndOf="@+id/station_logo_iv"
+                app:layout_constraintTop_toTopOf="parent">
+
+                <TextView
+                    android:id="@+id/petrol_95_description"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/petrol_description_margin"
+                    android:layout_marginTop="@dimen/petrol_description_margin"
+                    android:text="@string/petrol_a95"
+                    android:textColor="@color/green"
+                    android:textSize="@dimen/text_size"
+                    android:textStyle="bold"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <TextView
+                    android:id="@+id/petrol_95_info_tv"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/petrol_margin_start"
+                    android:layout_marginTop="@dimen/petrol_margin_top"
+                    android:layout_marginEnd="@dimen/petrol_margin_end"
+                    android:singleLine="true"
+                    android:textColor="@color/black"
+                    android:textSize="@dimen/text_size"
+                    android:textStyle="normal"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toEndOf="@+id/petrol_95_description"
+                    app:layout_constraintTop_toTopOf="parent"
+                    tools:text="до 30л, 48₴" />
+
+                <TextView
+                    android:id="@+id/diesel_description"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/petrol_description_margin"
+                    android:layout_marginTop="@dimen/petrol_description_margin"
+                    android:text="@string/diesel"
+                    android:textColor="@color/green"
+                    android:textSize="@dimen/text_size"
+                    android:textStyle="bold"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/petrol_95_description" />
+
+                <TextView
+                    android:id="@+id/diesel_info_tv"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/petrol_margin_start"
+                    android:layout_marginTop="@dimen/petrol_margin_top"
+                    android:layout_marginEnd="@dimen/petrol_margin_end"
+                    android:singleLine="true"
+                    android:textColor="@color/black"
+                    android:textSize="@dimen/text_size"
+                    android:textStyle="normal"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toEndOf="@+id/diesel_description"
+                    app:layout_constraintTop_toBottomOf="@+id/petrol_95_info_tv"
+                    tools:text="до 50л, 50₴" />
+
+                <TextView
+                    android:id="@+id/gas_description"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/petrol_description_margin"
+                    android:layout_marginTop="@dimen/petrol_description_margin"
+                    android:text="@string/gas"
+                    android:textColor="@color/green"
+                    android:textSize="@dimen/text_size"
+                    android:textStyle="bold"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/diesel_description" />
+
+                <TextView
+                    android:id="@+id/gas_info_tv"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/petrol_margin_start"
+                    android:layout_marginTop="@dimen/petrol_margin_top"
+                    android:layout_marginEnd="@dimen/petrol_margin_end"
+                    android:layout_marginBottom="4dp"
+                    android:singleLine="true"
+                    android:textColor="@color/black"
+                    android:textSize="@dimen/text_size"
+                    android:textStyle="normal"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toEndOf="@+id/diesel_description"
+                    app:layout_constraintTop_toBottomOf="@+id/diesel_info_tv"
+                    tools:text="без обмежень, 38₴" />
+
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+            <TextView
+                android:id="@+id/address_tv"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/address_margin_start"
+                android:layout_marginTop="@dimen/address_margin_top"
+                android:layout_marginEnd="@dimen/address_margin_end"
+                android:singleLine="true"
+                android:text="@{item.address}"
+                android:textColor="@color/green"
+                android:textSize="@dimen/item_textSize"
+                android:textStyle="bold"
+                app:layout_constraintEnd_toStartOf="@+id/edit_btn"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/station_logo_iv"
+                tools:text="м.Вінниця, вул.Київська, 63" />
+
+            <ImageView
+                android:id="@+id/delete_btn"
+                android:layout_width="@dimen/delete_btn_width"
+                android:layout_height="@dimen/delete_btn_height"
+                android:layout_marginEnd="@dimen/delete_btn_margin_end"
+                android:layout_marginBottom="@dimen/delete_btn_margin_bottom"
+                android:contentDescription="@null"
+                android:src="@drawable/ic_delete"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent" />
+
+            <ImageView
+                android:id="@+id/edit_btn"
+                android:layout_width="@dimen/edit_btn_width"
+                android:layout_height="@dimen/edit_btn_height"
+                android:src="@drawable/ic_edit"
+                android:layout_marginEnd="@dimen/edit_btn_margin_end"
+                android:layout_marginBottom="@dimen/edit_btn_margin_bottom"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toStartOf="@id/delete_btn"/>
+
+            <TextView
+                android:id="@+id/work_schedule_tv"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/work_schedule_margin_start"
+                android:layout_marginTop="@dimen/work_schedule_margin_top"
+                android:layout_marginBottom="@dimen/work_schedule_margin_bottom"
+                android:textColor="@color/black"
+                android:textSize="@dimen/text_size_small"
+                android:textStyle="normal"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/address_tv"
+                tools:text="06:00 - 23:00" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </androidx.cardview.widget.CardView>
+
+</layout>

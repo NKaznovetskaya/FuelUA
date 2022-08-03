@@ -1,0 +1,10 @@
+<TextView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/textView"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:padding="@dimen/dropdown_item_padding"
+    android:textColor="@color/black"
+    android:textSize="@dimen/text_size"
+    android:textStyle="normal"
+    tools:text="Івано-Франківська" />

@@ -1,0 +1,47 @@
+{
+  "project_info": {
+    "project_number": "619455845513",
+    "project_id": "fuel-ua-3da49",
+    "storage_bucket": "fuel-ua-3da49.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:619455845513:android:f88984a7d8e58fb04ce258",
+        "android_client_info": {
+          "package_name": "com.zeira.fuelua"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "619455845513-p3f2p7d9pbv81dpgfp0atkgf07cnp77l.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.zeira.fuelua",
+            "certificate_hash": "6b38bb9de963d2d527f7bfb0788548aa482c2f9f"
+          }
+        },
+        {
+          "client_id": "619455845513-c0liqn3qc2lbhnf2a217qlng2sfkrhej.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyB7JaFgMo4YhzLzeQsKkRua3MrwZZSruEA"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "619455845513-c0liqn3qc2lbhnf2a217qlng2sfkrhej.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

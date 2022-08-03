@@ -1,0 +1,240 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/phone_verification_constraint"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:visibility="visible">
+
+
+        <ImageView
+            android:id="@+id/logo"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/logo_margin_top"
+            android:contentDescription="@null"
+            android:src="@drawable/logo200"
+            android:visibility="visible"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+
+        <TextView
+            android:id="@+id/app_name"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/app_name_margin_top"
+            android:text="@string/app_name"
+            android:textColor="@color/green"
+            android:textSize="@dimen/app_name_text_size"
+            android:textStyle="bold"
+            android:visibility="visible"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/logo" />
+
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/phone_container_et"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/phone_container_et_margin_top"
+            android:visibility="visible"
+            app:helperText=" "
+            app:helperTextTextColor="@color/red"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/app_name">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/phone_verification_et"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginTop="@dimen/phone_verification_et_margin_top"
+
+                android:background="@drawable/custom_edit_text_selected"
+                android:ems="10"
+                android:imeOptions="actionDone"
+                android:inputType="phone"
+                android:maxLength="13"
+                android:padding="@dimen/phone_verification_et_padding"
+                android:textColor="@color/black"
+                android:textColorHint="@color/quantum_grey"
+                android:textSize="@dimen/text_size"
+                android:visibility="visible" />
+
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <Button
+            android:id="@+id/phone_verification_btn"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/phone_verification_btn_margin_top"
+            android:background="@drawable/custom_button"
+            android:text="@string/verification_number_phone"
+            android:textAllCaps="true"
+            android:textSize="@dimen/text_size"
+            android:textStyle="normal"
+            android:visibility="visible"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/phone_container_et" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/code_verification_constraint"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:visibility="gone">
+
+        <ImageView
+            android:id="@+id/imageView"
+            android:layout_width="@dimen/imageView_width"
+            android:layout_height="@dimen/imageView_height"
+            android:layout_marginTop="@dimen/imageView_margin_top"
+            android:contentDescription="@null"
+            android:src="@drawable/verify_phone_img"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.497"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+
+        <TextView
+            android:id="@+id/enter_code_description"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/enter_code_description_margin_start"
+            android:layout_marginTop="@dimen/enter_code_description_margin_top"
+            android:layout_marginEnd="@dimen/enter_code_description_margin_end"
+            android:gravity="center"
+            android:text="@string/enter_the_code_to_verify"
+            android:textColor="@color/black"
+            android:textSize="@dimen/enter_code_description_text_size"
+            android:textStyle="bold"
+            android:visibility="visible"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.511"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/imageView" />
+
+
+        <TextView
+            android:id="@+id/code_description"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/code_description_margin_start"
+            android:layout_marginTop="@dimen/code_description_margin_top"
+            android:layout_marginEnd="@dimen/code_description_margin_end"
+            android:gravity="center"
+            android:text="@string/we_sent_a_verification_code"
+            android:textColor="@color/black"
+            android:textSize="@dimen/text_size"
+            android:textStyle="normal"
+            android:visibility="visible"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/enter_code_description" />
+
+        <LinearLayout
+            android:id="@+id/linear_layout"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/code_description">
+
+            <in.aabhasjindal.otptextview.OtpTextView
+                android:id="@+id/verification_code_otp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/verification_code_otp_margin_top"
+                android:textColor="@color/black"
+                app:bar_enabled="true"
+                app:bar_height="2dp"
+                app:height="40dp"
+                app:helperTextTextColor="@color/red"
+
+                app:length="6"
+                app:otp_text_size="24dp"
+                app:width="40dp" />
+
+
+            <TextView
+                android:id="@+id/error_message_tv"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/error_message_tv_margin_start"
+                android:layout_marginTop="@dimen/error_message_tv_margin_top"
+                android:visibility="gone"
+                android:text="@string/the_code_was_entered_incorrectly"
+                android:textColor="@color/red"
+                android:textSize="@dimen/error_message_tv_size" />
+
+        </LinearLayout>
+
+
+
+
+        <Button
+            android:id="@+id/code_verification_btn"
+            android:layout_width="wrap_content"
+            android:layout_height="35dp"
+            android:layout_marginTop="15dp"
+            android:background="@drawable/custom_button"
+            android:text="@string/continue_text"
+            android:textAllCaps="true"
+            android:textSize="@dimen/text_size"
+            android:textStyle="normal"
+            android:visibility="visible"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/linear_layout" />
+
+
+        <TextView
+            android:id="@+id/code_not_sent"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="25dp"
+            android:layout_marginTop="25dp"
+            android:layout_marginEnd="25dp"
+            android:gravity="center"
+            android:text="Якщо ви не отримали код протягом однієї хвилини - натисність кнопку, щоб повторно виконати запит"
+            android:textColor="@color/quantum_grey"
+            android:textSize="@dimen/text_size_small"
+            android:visibility="visible"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/code_verification_btn" />
+
+        <Button
+            android:id="@+id/send_code_again"
+            android:layout_width="wrap_content"
+            android:layout_height="30dp"
+            android:layout_marginTop="25dp"
+            android:background="@drawable/custom_black_button"
+            android:text="Надіслати код ще раз \u27F3"
+            android:textAllCaps="false"
+            android:textColor="@color/white"
+            android:textSize="14sp"
+            android:paddingStart="10dp"
+            android:paddingEnd="10dp"
+            android:visibility="visible"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/code_not_sent" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

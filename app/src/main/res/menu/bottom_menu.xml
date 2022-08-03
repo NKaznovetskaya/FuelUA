@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item
+        android:id="@+id/mapFragment2"
+        android:icon="@drawable/ic_gas_station"
+        android:title="Карта" />
+    <item
+        android:id="@+id/gasStationListFragment2"
+        android:icon="@drawable/ic_list"
+        android:title="Список" />
+    <item
+        android:id="@+id/favoritesFragment2"
+        android:icon="@drawable/ic_favorite"
+
+        android:title="Вибране" />
+    <item
+        android:id="@+id/menuFragment"
+        android:icon="@drawable/ic_menu"
+        android:title="Меню"/>
+
+</menu>

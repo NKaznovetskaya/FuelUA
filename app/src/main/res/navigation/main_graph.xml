@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main_graph"
+    app:startDestination="@id/mainNavFragment">
+
+    <fragment
+        android:id="@+id/mainNavFragment"
+        android:name="com.zeira.fuelua.presentation.MainNavFragment"
+        android:label="MainNavFragment"
+        tools:layout="@layout/fragment_main_nav">
+
+        <action
+            android:id="@+id/to_settings_fragment"
+            app:destination="@id/settingsFragment" />
+
+        <action
+            android:id="@+id/to_phone_auth_fragment"
+            app:destination="@id/phoneAuthFragment" />
+
+        <action
+            android:id="@+id/to_about_us_fragment"
+            app:destination="@id/aboutUsFragment" />
+
+
+    </fragment>
+
+    <fragment
+        android:id="@+id/settingsFragment"
+        android:name="com.zeira.fuelua.presentation.menu.settings.SettingsFragment"
+        android:label="SettingsFragment"
+        tools:layout="@layout/fragment_settings"/>
+
+    <fragment
+        android:id="@+id/phoneAuthFragment"
+        android:name="com.zeira.fuelua.presentation.menu.company.authorization.PhoneAuthFragment"
+        android:label="PhoneAuthFragment"
+        tools:layout="@layout/fragment_phone_auth">
+        <action
+            android:id="@+id/action_phoneAuthFragment_to_manageCompanyFragment"
+            app:destination="@id/manageCompanyFragment2" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/aboutUsFragment"
+        android:name="com.zeira.fuelua.presentation.menu.about.AboutUsFragment"
+        android:label="AboutUsFragment"
+        tools:layout="@layout/fragment_about_us"/>
+    <fragment
+        android:id="@+id/manageCompanyFragment2"
+        android:name="com.zeira.fuelua.presentation.menu.company.companySettings.ManageCompanyFragment"
+        android:label="fragment_manage_company"
+        tools:layout="@layout/fragment_manage_company" >
+        <action
+            android:id="@+id/action_manageCompanyFragment2_to_mainNavFragment"
+            app:destination="@id/mainNavFragment" />
+        <action
+            android:id="@+id/action_manageCompanyFragment2_to_companyListStationFragment"
+            app:destination="@id/companyListStationFragment" />
+
+    </fragment>
+    <fragment
+        android:id="@+id/companyListStationFragment"
+        android:name="com.zeira.fuelua.presentation.menu.company.listStation.CompanyListStationFragment"
+        android:label="fragment_company_list_station"
+        tools:layout="@layout/fragment_company_list_station" >
+        <action
+            android:id="@+id/action_companyListStationFragment_to_createStationFragment"
+            app:destination="@id/createStationFragment" />
+
+        <action
+            android:id="@+id/action_companyListStationFragment_to_updateStationFragment"
+            app:destination="@id/updateStationFragment" />
+
+        <argument
+            android:name="company_id"
+            app:argType="integer" />
+
+    </fragment>
+    <fragment
+        android:id="@+id/createStationFragment"
+        android:name="com.zeira.fuelua.presentation.menu.company.createStation.CreateStationFragment"
+        android:label="fragment_create_station"
+        tools:layout="@layout/fragment_create_station" />
+
+    <fragment
+        android:id="@+id/updateStationFragment"
+        android:name="com.zeira.fuelua.presentation.menu.company.updateStation.UpdateStationFragment"
+        android:label="fragment_create_station"
+        tools:layout="@layout/fragment_create_station" >
+
+        <argument
+            android:name="gasStation"
+            app:argType="com.zeira.fuelua.domain.models.GasStationModelX" />
+
+    </fragment>
+
+
+
+</navigation>

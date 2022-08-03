@@ -1,0 +1,270 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/background_color"
+    android:clickable="true"
+    android:focusable="true">
+
+
+    <com.google.android.material.appbar.AppBarLayout
+        android:id="@+id/appBarLayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/background_color"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <androidx.appcompat.widget.Toolbar
+            android:id="@+id/toolbar"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <ImageButton
+                    android:id="@+id/back_button"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/back_button_margin"
+                    android:layout_marginBottom="@dimen/back_button_margin"
+                    android:background="@android:color/transparent"
+                    android:contentDescription="@null"
+                    android:src="@drawable/ic_baseline_arrow_back"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <TextView
+                    android:id="@+id/company_manage_tv"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/about_us_margin_start"
+                    android:layout_marginTop="@dimen/about_us_margin_top"
+                    android:text="@string/company_profile"
+                    android:textColor="@color/black"
+                    android:textSize="@dimen/text_size_large"
+                    android:textStyle="normal"
+                    app:layout_constraintStart_toEndOf="@+id/back_button"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+        </androidx.appcompat.widget.Toolbar>
+    </com.google.android.material.appbar.AppBarLayout>
+
+    <de.hdodenhof.circleimageview.CircleImageView
+        android:id="@+id/company_logo_iv"
+        android:layout_width="@dimen/company_logo_width"
+        android:layout_height="@dimen/company_logo_height"
+        android:layout_marginStart="@dimen/company_logo_margin_start"
+        android:layout_marginTop="@dimen/company_logo_margin_top"
+        android:src="@drawable/place_holder"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/appBarLayout" />
+
+
+    <Button
+        android:id="@+id/add_company_logo_btn"
+        android:layout_width="@dimen/add_company_logo_btn_width"
+        android:layout_height="@dimen/add_company_logo_btn_height"
+        android:layout_marginStart="@dimen/add_company_logo_btn_margin_start"
+        android:layout_marginTop="@dimen/add_company_logo_btn_margin_top"
+        android:background="@drawable/custom_round_button"
+        android:text="@string/plus"
+        android:textSize="@dimen/text_size_large"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="@+id/company_logo_iv"
+        app:layout_constraintStart_toStartOf="@+id/company_logo_iv"
+        app:layout_constraintTop_toTopOf="@+id/company_logo_iv" />
+
+
+    <TextView
+        android:id="@+id/company_name_label"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/company_name_label_margin_start"
+        android:layout_marginTop="@dimen/company_name_label_margin_top"
+        android:text="@string/company_name"
+        android:textColor="@color/black"
+        android:textSize="@dimen/text_size_small"
+        android:textStyle="normal"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/company_logo_iv"
+        app:layout_constraintTop_toBottomOf="@+id/appBarLayout" />
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/company_name_container"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/company_name_container_margin_start"
+        android:layout_marginEnd="@dimen/company_name_container_margin_end"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@id/company_logo_iv"
+        app:layout_constraintTop_toBottomOf="@+id/company_name_label">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/company_name_et"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@drawable/custom_edit_text_unselected"
+            android:imeOptions="actionNext"
+            android:inputType="textCapWords"
+            android:maxLength="25"
+            android:paddingLeft="@dimen/company_name_et_padding_left"
+            android:paddingEnd="@dimen/company_name_et_padding_end"
+            android:textColor="@color/black"
+            android:textSize="@dimen/text_size_large"
+            tools:text="Wog" />
+
+    </com.google.android.material.textfield.TextInputLayout>
+
+
+    <TextView
+        android:id="@+id/phone_number_label"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/phone_number_label_margin_start"
+        android:layout_marginTop="@dimen/phone_number_label_margin_top"
+        android:layout_marginEnd="@dimen/phone_number_label_margin_end"
+        android:text="@string/company_phone_number"
+        android:textColor="@color/black"
+        android:textSize="@dimen/text_size_small"
+        android:textStyle="normal"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/company_logo_iv" />
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/phone_number_container"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/phone_number_container_margin_start"
+        android:layout_marginEnd="@dimen/phone_number_container_margin_end"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/phone_number_label">
+
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/phone_number_et"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/custom_edit_text_unselected"
+            android:enabled="false"
+            android:imeOptions="actionNext"
+            android:inputType="phone"
+            android:maxLength="13"
+            android:paddingLeft="@dimen/phone_number_et_padding_left"
+            android:textColor="@color/black"
+            android:textSize="@dimen/text_size_large"
+            android:textStyle="normal"
+            tools:text="+380501234567" />
+    </com.google.android.material.textfield.TextInputLayout>
+
+
+    <TextView
+        android:id="@+id/company_description_label"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/company_description_label_margin_start"
+        android:layout_marginTop="@dimen/company_description_label_margin_top"
+        android:layout_marginEnd="@dimen/company_description_label_margin_end"
+        android:text="@string/company_description"
+        android:textColor="@color/black"
+        android:textSize="@dimen/text_size_small"
+        android:textStyle="normal"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/phone_number_container" />
+
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/company_description_container"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/company_description_container_margin_start"
+        android:layout_marginEnd="@dimen/company_description_container_margin_end"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/company_description_label">
+
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/company_description_et"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/custom_large_edit_text_unselected"
+            android:inputType="textMultiLine|textCapWords"
+            android:maxLength="255"
+            android:paddingLeft="@dimen/company_description_et_padding_left"
+            android:paddingTop="@dimen/company_description_et_padding_top"
+            android:paddingEnd="@dimen/company_description_et_padding_end"
+            android:paddingBottom="@dimen/company_description_et_padding_bottom"
+            android:textColor="@color/black"
+            android:textSize="@dimen/text_size" />
+
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <Button
+        android:id="@+id/update_data_btn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/update_data_btn_margin_top"
+        android:layout_marginEnd="@dimen/update_data_btn_margin_end"
+        android:background="@drawable/custom_button"
+        android:text="@string/update_data"
+        android:visibility="visible"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toEndOf="@+id/list_off_station_btn"
+        app:layout_constraintTop_toBottomOf="@+id/company_description_container" />
+
+    <Button
+        android:id="@+id/list_off_station_btn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/list_off_station_btn_margin_start"
+        android:layout_marginTop="@dimen/list_off_station_btn_margin_top"
+        android:background="@drawable/custom_button"
+        android:text="@string/list_of_station"
+        android:visibility="visible"
+        app:layout_constraintEnd_toStartOf="@+id/update_data_btn"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/company_description_container" />
+
+
+    <TextView
+        android:id="@+id/helper_text"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/helper_text_margin_top"
+        android:textColor="@color/red"
+        android:textSize="@dimen/text_size_small"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/update_data_btn"
+        tools:text="@string/the_field_must_not_be_empty" />
+
+    <Button
+        android:id="@+id/sign_out_btn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="@dimen/sign_out_btn_margin_bottom"
+        android:background="@drawable/custom_black_button"
+        android:text="@string/sign_out"
+        android:textAllCaps="false"
+        android:textSize="@dimen/text_size"
+        android:visibility="visible"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

@@ -1,0 +1,293 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.coordinatorlayout.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".presentation.details.DetailsBottomDialog">
+
+
+    <com.google.android.material.appbar.CollapsingToolbarLayout
+        android:layout_width="match_parent"
+        android:layout_height="42dp"
+        app:layout_scrollFlags="scroll|exitUntilCollapsed">
+
+        <ImageView
+            android:id="@+id/pull"
+            android:layout_width="@dimen/pull_width"
+            android:layout_height="@dimen/pull_height"
+            android:layout_gravity="center"
+            android:layout_marginTop="@dimen/pull_marginTop"
+            android:contentDescription="@null"
+            android:src="@drawable/ic_baseline_maximize_24"
+            android:visibility="visible" />
+
+    </com.google.android.material.appbar.CollapsingToolbarLayout>
+
+    <androidx.core.widget.NestedScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/scroll_view_marginTop"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/main_constraint"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+
+            <ImageView
+                android:id="@+id/gas_station_logo_iv"
+                android:layout_width="@dimen/gas_station_logo_size"
+                android:layout_height="@dimen/gas_station_logo_size"
+                android:layout_marginStart="@dimen/gas_station_logo_marginStart"
+                android:layout_marginTop="@dimen/gas_station_logo_marginTop"
+                android:contentDescription="@null"
+                android:src="@mipmap/ic_launcher"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:id="@+id/address_tv"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/address_marginStart"
+                android:layout_marginTop="@dimen/address_marginTop"
+                android:layout_marginEnd="@dimen/address_marginEnd"
+                android:textColor="@color/black"
+                android:textSize="@dimen/text_size"
+                android:textStyle="bold"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toEndOf="@+id/gas_station_logo_iv"
+                app:layout_constraintTop_toTopOf="parent"
+                tools:text="Demo text" />
+
+            <TextView
+                android:id="@+id/info_tv"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/info_marginStart"
+                android:layout_marginTop="@dimen/info_marginTop"
+                android:text="@string/demo_info"
+                android:textColor="@color/black"
+                android:textSize="@dimen/text_size"
+                android:textStyle="bold"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/gas_station_logo_iv" />
+
+            <ImageView
+                android:id="@+id/favorite_btn"
+                android:layout_width="@dimen/favorite_btn_size_bottom_sheet"
+                android:layout_height="@dimen/favorite_btn_size_bottom_sheet"
+                android:layout_marginTop="@dimen/favorite_btn_bottom_sheet_marginTop"
+                android:layout_marginEnd="@dimen/favorite_btn_bottom_sheet_marginEnd"
+                android:contentDescription="@null"
+                android:src="@drawable/ic_favorite_not_selected"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/address_tv" />
+
+            <ImageView
+                android:id="@+id/diesel_logo_iv"
+                android:layout_width="@dimen/fuel_logo_width"
+                android:layout_height="@dimen/fuel_logo_height"
+                android:layout_marginStart="@dimen/fuel_logo_marginStart"
+                android:layout_marginTop="@dimen/fuel_logo_marginTop"
+                android:contentDescription="@null"
+                android:src="@drawable/ic_diesel"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/info_tv" />
+
+            <TextView
+                android:id="@+id/diesel_info_tv"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/fuel_info_marginStart"
+                android:layout_marginTop="@dimen/fuel_info_marginTop"
+                android:text="@string/demo_info"
+                android:textColor="@color/black"
+                android:textSize="@dimen/text_size"
+                android:textStyle="bold"
+                app:layout_constraintStart_toEndOf="@+id/diesel_logo_iv"
+                app:layout_constraintTop_toBottomOf="@+id/info_tv" />
+
+            <ImageView
+                android:id="@+id/petrol_95_logo_iv"
+                android:layout_width="@dimen/fuel_logo_width"
+                android:layout_height="@dimen/fuel_logo_height"
+                android:layout_marginStart="@dimen/fuel_logo_marginStart"
+                android:layout_marginTop="@dimen/fuel_logo_marginTop"
+                android:contentDescription="@null"
+                android:src="@drawable/ic_95_petrol"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/diesel_logo_iv" />
+
+            <TextView
+                android:id="@+id/petrol_95_info_tv"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/fuel_info_marginStart"
+                android:layout_marginTop="@dimen/fuel_info_marginTop"
+                android:text="@string/demo_info"
+                android:textColor="@color/black"
+                android:textSize="@dimen/text_size"
+                android:textStyle="bold"
+                app:layout_constraintStart_toEndOf="@+id/petrol_95_logo_iv"
+                app:layout_constraintTop_toBottomOf="@+id/diesel_logo_iv" />
+
+            <ImageView
+                android:id="@+id/petrol_92_logo_iv"
+                android:layout_width="@dimen/fuel_logo_width"
+                android:layout_height="@dimen/fuel_logo_height"
+                android:layout_marginStart="@dimen/fuel_logo_marginStart"
+                android:layout_marginTop="@dimen/fuel_logo_marginTop"
+                android:contentDescription="@null"
+                android:src="@drawable/ic_92_petrol"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/petrol_95_logo_iv" />
+
+            <TextView
+                android:id="@+id/petrol_92_info_tv"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/fuel_info_marginStart"
+                android:layout_marginTop="@dimen/fuel_info_marginTop"
+                android:text="@string/demo_info"
+                android:textColor="@color/black"
+                android:textSize="@dimen/text_size"
+                android:textStyle="bold"
+                app:layout_constraintStart_toEndOf="@+id/petrol_92_logo_iv"
+                app:layout_constraintTop_toBottomOf="@+id/petrol_95_logo_iv" />
+
+            <ImageView
+                android:id="@+id/gas_logo_iv"
+                android:layout_width="@dimen/fuel_logo_width"
+                android:layout_height="@dimen/fuel_logo_height"
+                android:layout_marginStart="@dimen/fuel_logo_marginStart"
+                android:layout_marginTop="@dimen/fuel_logo_marginTop"
+                android:contentDescription="@null"
+                android:src="@drawable/ic_gas"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/petrol_92_logo_iv" />
+
+            <TextView
+                android:id="@+id/gas_info_tv"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/fuel_info_marginStart"
+                android:layout_marginTop="@dimen/fuel_info_marginTop"
+                android:text="@string/demo_info"
+                android:textColor="@color/black"
+                android:textSize="@dimen/text_size"
+                android:textStyle="bold"
+                app:layout_constraintStart_toEndOf="@+id/gas_logo_iv"
+                app:layout_constraintTop_toBottomOf="@+id/petrol_92_logo_iv" />
+
+
+            <TextView
+                android:id="@+id/additional_info_description"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/tv_marginStart"
+                android:layout_marginTop="@dimen/tv_marginTop"
+                android:text="@string/additional_info"
+                android:textColor="@color/black"
+                android:textSize="@dimen/text_size"
+                android:textStyle="bold"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/gas_logo_iv" />
+
+            <ImageView
+                android:id="@+id/info_logo_iv"
+                android:layout_width="@dimen/info_logo_width"
+                android:layout_height="@dimen/info_logo_height"
+                android:layout_marginStart="@dimen/info_logo_marginStart"
+                android:layout_marginTop="@dimen/info_logo_marginTop"
+                android:contentDescription="@null"
+                android:src="@drawable/ic_info_green"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/additional_info_description" />
+
+            <TextView
+                android:id="@+id/work_schedule_description"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/work_schedule_description_margin_start"
+                android:layout_marginTop="@dimen/work_schedule_description_margin_top"
+                android:text="@string/work_schedule"
+                android:textColor="@color/black"
+                android:textSize="@dimen/text_size"
+                android:textStyle="bold"
+                app:layout_constraintStart_toEndOf="@+id/info_logo_iv"
+                app:layout_constraintTop_toBottomOf="@+id/additional_info_description" />
+
+            <TextView
+                android:id="@+id/work_schedule_tv"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/work_schedule_marginStart"
+                android:layout_marginTop="@dimen/work_schedule_marginTop"
+                android:textColor="@color/black"
+                android:textSize="@dimen/text_size"
+                android:textStyle="bold"
+                app:layout_constraintStart_toEndOf="@+id/work_schedule_description"
+                app:layout_constraintTop_toBottomOf="@+id/additional_info_description"
+                tools:text="цілодобово" />
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/schedule_constraint"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/schedule_constraint_margin_start"
+                android:layout_marginTop="@dimen/schedule_constraint_margin_top"
+                android:layout_marginEnd="@dimen/schedule_constraint_margin_end"
+                android:background="@drawable/round_outline"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/work_schedule_description">
+
+               <androidx.recyclerview.widget.RecyclerView
+                   android:id="@+id/schedule_rv"
+                   android:layout_width="match_parent"
+                   android:layout_height="match_parent"
+                   android:layout_marginTop="@dimen/recycler_margin_top"
+                   android:layout_marginBottom="@dimen/recycler_margin_top"
+                   app:layout_constraintBottom_toBottomOf="parent"
+                   app:layout_constraintEnd_toEndOf="parent"
+                   app:layout_constraintStart_toStartOf="parent"
+                   app:layout_constraintTop_toTopOf="parent"/>
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+            <TextView
+                android:id="@+id/additional_info_tv"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/additional_info_marginStart"
+                android:layout_marginTop="@dimen/additional_info_margin_top"
+                android:layout_marginEnd="@dimen/additional_info_marginEnd"
+                android:textColor="@color/black"
+                android:textSize="@dimen/text_size"
+                android:textStyle="bold"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/schedule_constraint"
+                tools:text="Demo additional info" />
+
+            <TextView
+                android:layout_width="@dimen/border_width"
+                android:layout_height="@dimen/border_height"
+                android:layout_marginTop="@dimen/border_marginTop"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/additional_info_tv" />
+
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </androidx.core.widget.NestedScrollView>
+
+</androidx.coordinatorlayout.widget.CoordinatorLayout>

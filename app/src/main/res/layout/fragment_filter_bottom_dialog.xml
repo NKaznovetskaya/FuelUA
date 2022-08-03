@@ -1,0 +1,134 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.coordinatorlayout.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".presentation.filter.FilterBottomDialog">
+
+
+    <com.google.android.material.appbar.CollapsingToolbarLayout
+        android:layout_width="match_parent"
+        android:layout_height="42dp"
+        app:layout_scrollFlags="scroll|exitUntilCollapsed">
+
+        <ImageView
+            android:id="@+id/pull"
+            android:layout_width="@dimen/pull_width"
+            android:layout_height="@dimen/pull_height"
+            android:layout_gravity="center"
+            android:layout_marginTop="@dimen/pull_marginTop"
+            android:contentDescription="@null"
+            android:src="@drawable/ic_baseline_maximize_24"
+            android:visibility="visible" />
+
+    </com.google.android.material.appbar.CollapsingToolbarLayout>
+
+    <androidx.core.widget.NestedScrollView
+        android:id="@+id/nestedScrollView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/main_constraint_layout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/main_constraint_layout_margin_top">
+
+            <TextView
+                android:id="@+id/regions_label_tv"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/regions_label_margin_start"
+                android:layout_marginTop="@dimen/regions_label_margin_top"
+                android:layout_marginEnd="@dimen/regions_label_margin_end"
+                android:text="@string/region"
+                android:textColor="@color/green"
+                android:textSize="@dimen/text_size"
+                android:textStyle="normal"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <com.zeira.fuelua.utils.CustomGridView
+                android:id="@+id/regions_gv"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/regions_gv_margin_start"
+                android:layout_marginTop="@dimen/regions_gv_margin_top"
+                android:layout_marginEnd="@dimen/regions_gv_margin_end"
+                android:numColumns="2"
+                android:orientation="vertical"
+                android:nestedScrollingEnabled="false"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/regions_label_tv"
+                tools:listitem=" " />
+
+            <TextView
+                android:id="@+id/fuel_type_label_tv"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/fuel_type_label_margin_start"
+                android:layout_marginTop="@dimen/fuel_type_label_margin_top"
+                android:layout_marginEnd="@dimen/fuel_type_label_margin_end"
+                android:text="@string/fuel_type"
+                android:textColor="@color/green"
+                android:textSize="@dimen/text_size"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/regions_gv" />
+
+            <com.zeira.fuelua.utils.CustomGridView
+                android:id="@+id/fuel_type_gv"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/fuel_type_gv_margin_start"
+                android:layout_marginTop="@dimen/fuel_type_gv_margin_top"
+                android:layout_marginEnd="@dimen/fuel_type_gv_margin_end"
+                android:numColumns="3"
+                android:orientation="vertical"
+                android:nestedScrollingEnabled="false"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/fuel_type_label_tv"
+                tools:listitem=" "/>
+
+
+            <CheckBox
+                android:id="@+id/checkBox"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/check_box_margin_start"
+                android:layout_marginTop="@dimen/check_box_margin_top"
+                android:buttonTint="@color/black"
+                android:text="@string/check_box_text"
+                android:textColor="@color/green"
+                android:textSize="@dimen/text_size"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/fuel_type_gv" />
+
+            <Button
+                android:id="@+id/filter_btn"
+                android:layout_width="wrap_content"
+                android:layout_height="@dimen/filter_btn_height"
+                android:layout_marginTop="@dimen/filter_btn_margin_top"
+                android:background="@drawable/custom_button"
+                android:text="@string/filter"
+                android:textColor="@color/white"
+                android:textSize="@dimen/text_size"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/checkBox" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/filter_btn" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </androidx.core.widget.NestedScrollView>
+</androidx.coordinatorlayout.widget.CoordinatorLayout>

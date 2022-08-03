@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main_menu_graph"
+    app:startDestination="@id/gasStationListFragment2">
+
+    <fragment
+        android:id="@+id/mapFragment2"
+        android:name="com.zeira.fuelua.presentation.map.MapFragment"
+        android:label="fragment_map"
+        tools:layout="@layout/fragment_map" />
+    <fragment
+        android:id="@+id/favoritesFragment2"
+        android:name="com.zeira.fuelua.presentation.favorites.FavoritesFragment"
+        android:label="fragment_favorites"
+        tools:layout="@layout/fragment_favorites" />
+    <fragment
+        android:id="@+id/gasStationListFragment2"
+        android:name="com.zeira.fuelua.presentation.gasStationList.GasStationListFragment"
+        android:label="fragment_gas_station_list"
+        tools:layout="@layout/fragment_gas_station_list" />
+    <fragment
+        android:id="@+id/menuFragment"
+        android:name="com.zeira.fuelua.presentation.menu.MenuFragment"
+        android:label="fragment_menu"
+        tools:layout="@layout/fragment_menu" />
+</navigation>
